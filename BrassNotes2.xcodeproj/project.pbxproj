@@ -14,6 +14,10 @@
 		65F2598D1F0F4172007BCBFC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65F2598B1F0F4172007BCBFC /* LaunchScreen.storyboard */; };
 		65F259981F0F4172007BCBFC /* BrassNotes2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F259971F0F4172007BCBFC /* BrassNotes2Tests.swift */; };
 		65F259A31F0F4172007BCBFC /* BrassNotes2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F259A21F0F4172007BCBFC /* BrassNotes2UITests.swift */; };
+		65F259B11F0F50A3007BCBFC /* Stave.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F259B01F0F50A3007BCBFC /* Stave.swift */; };
+		65F259B41F0F52D9007BCBFC /* trombone.json in Resources */ = {isa = PBXBuildFile; fileRef = 65F259B31F0F52D9007BCBFC /* trombone.json */; };
+		65F259B61F0F55FD007BCBFC /* InstrumentObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F259B51F0F55FD007BCBFC /* InstrumentObject.swift */; };
+		65F259B81F0F5608007BCBFC /* NoteObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F259B71F0F5608007BCBFC /* NoteObject.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +51,10 @@
 		65F2599E1F0F4172007BCBFC /* BrassNotes2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BrassNotes2UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		65F259A21F0F4172007BCBFC /* BrassNotes2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrassNotes2UITests.swift; sourceTree = "<group>"; };
 		65F259A41F0F4172007BCBFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		65F259B01F0F50A3007BCBFC /* Stave.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stave.swift; sourceTree = "<group>"; };
+		65F259B31F0F52D9007BCBFC /* trombone.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = trombone.json; path = Data/trombone.json; sourceTree = "<group>"; };
+		65F259B51F0F55FD007BCBFC /* InstrumentObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstrumentObject.swift; sourceTree = "<group>"; };
+		65F259B71F0F5608007BCBFC /* NoteObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteObject.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,10 +107,14 @@
 			children = (
 				65F259821F0F4172007BCBFC /* AppDelegate.swift */,
 				65F259841F0F4172007BCBFC /* ViewController.swift */,
+				65F259B01F0F50A3007BCBFC /* Stave.swift */,
+				65F259B51F0F55FD007BCBFC /* InstrumentObject.swift */,
+				65F259B71F0F5608007BCBFC /* NoteObject.swift */,
 				65F259861F0F4172007BCBFC /* Main.storyboard */,
 				65F259891F0F4172007BCBFC /* Assets.xcassets */,
 				65F2598B1F0F4172007BCBFC /* LaunchScreen.storyboard */,
 				65F2598E1F0F4172007BCBFC /* Info.plist */,
+				65F259B21F0F52A8007BCBFC /* Data */,
 			);
 			path = BrassNotes2;
 			sourceTree = "<group>";
@@ -123,6 +135,14 @@
 				65F259A41F0F4172007BCBFC /* Info.plist */,
 			);
 			path = BrassNotes2UITests;
+			sourceTree = "<group>";
+		};
+		65F259B21F0F52A8007BCBFC /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				65F259B31F0F52D9007BCBFC /* trombone.json */,
+			);
+			name = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,6 +258,7 @@
 				65F2598D1F0F4172007BCBFC /* LaunchScreen.storyboard in Resources */,
 				65F2598A1F0F4172007BCBFC /* Assets.xcassets in Resources */,
 				65F259881F0F4172007BCBFC /* Main.storyboard in Resources */,
+				65F259B41F0F52D9007BCBFC /* trombone.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,7 +284,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				65F259851F0F4172007BCBFC /* ViewController.swift in Sources */,
+				65F259B61F0F55FD007BCBFC /* InstrumentObject.swift in Sources */,
+				65F259B11F0F50A3007BCBFC /* Stave.swift in Sources */,
 				65F259831F0F4172007BCBFC /* AppDelegate.swift in Sources */,
+				65F259B81F0F5608007BCBFC /* NoteObject.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

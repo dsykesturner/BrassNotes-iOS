@@ -1,0 +1,169 @@
+{
+    "clef":"base",
+    "startingNoteIndex":7,
+    "notes":
+    [
+     {
+     "staveIndex":-13,
+     "note":"E",
+     "position":"7th",
+     "isSharp":false,
+     "isFlat":false
+     },
+     {
+     "staveIndex":-12,
+     "note":"F",
+     "position":"6th",
+     "isSharp":false,
+     "isFlat":false
+     },
+     {
+     "staveIndex":-11,
+     "note":"F♯ or G♭",
+     "position":"5th",
+     "isSharp":true,
+     "isFlat":true
+     },
+     {
+     "staveIndex":-10,
+     "note":"G",
+     "position":"4th",
+     "isSharp":false,
+     "isFlat":false
+     },
+     {
+     "staveIndex":-9,
+     "note":"G♯ or A♭",
+     "position":"3rd",
+     "isSharp":true,
+     "isFlat":true
+     },
+     {
+     "staveIndex":-8,
+     "note":"A",
+     "position":"2nd",
+     "isSharp":false,
+     "isFlat":false
+     },
+     {
+     "staveIndex":-7,
+     "note":"A♯ or B♭",
+     "position":"1st",
+     "isSharp":true,
+     "isFlat":true
+     },
+     {
+     "staveIndex":-6,
+     "note":"B",
+     "position":"7th",
+     "isSharp":false,
+     "isFlat":false
+     },
+     {
+     "staveIndex":-5,
+     "note":"C",
+     "position":"6th",
+     "isSharp":false,
+     "isFlat":false
+     },
+     {
+     "staveIndex":-4,
+     "note":"C♯ or D♭",
+     "position":"5th",
+     "isSharp":true,
+     "isFlat":true
+     },
+     {
+     "staveIndex":-3,
+     "note":"D",
+     "position":"4th",
+     "isSharp":false,
+     "isFlat":false
+     },
+     {
+     "staveIndex":-2,
+     "note":"D♯ or E♭",
+     "position":"3rd",
+     "isSharp":true,
+     "isFlat":true
+     },
+     {
+     "staveIndex":-1,
+     "note":"E",
+     "position":"2nd or 7th",
+     "isSharp":false,
+     "isFlat":false
+     },
+     {
+     "staveIndex":0,
+     "note":"F",
+     "position":"1st or 6th",
+     "isSharp":false,
+     "isFlat":false
+     },
+     {
+     "staveIndex":1,
+     "note":"F♯ or G♭",
+     "position":"5th",
+     "isSharp":true,
+     "isFlat":true
+     },
+     {
+     "staveIndex":2,
+     "note":"G",
+     "position":"4th",
+     "isSharp":false,
+     "isFlat":false
+     },
+     {
+     "staveIndex":3,
+     "note":"G♯ or A♭",
+     "position":"3rd or 7th",
+     "isSharp":true,
+     "isFlat":true
+     },
+     {
+     "staveIndex":4,
+     "note":"A",
+     "position":"2nd or 6th",
+     "isSharp":false,
+     "isFlat":false
+     },
+     {
+     "staveIndex":5,
+     "note":"A♯ or B♭",
+     "position":"1st or 5th",
+     "isSharp":true,
+     "isFlat":true
+     },
+     {
+     "staveIndex":6,
+     "note":"B",
+     "position":"4th or 7th",
+     "isSharp":false,
+     "isFlat":false
+     },
+     {
+     "staveIndex":7,
+     "note":"C",
+     "position":"3rd or 6th",
+     "isSharp":false,
+     "isFlat":false
+     },
+     {
+     "staveIndex":8,
+     "note":"C♯ or D♭",
+     "position":"2nd or 5th",
+     "isSharp":true,
+     "isFlat":true
+     },
+     {
+     "staveIndex":9,
+     "note":"D",
+     "position":"1st or 4th",
+     "isSharp":false,
+     "isFlat":false
+     }
+    ]
+    
+}
