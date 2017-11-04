@@ -19,9 +19,14 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var testStepper: UIStepper!
     
+    @IBOutlet weak var stave: Stave!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        stave.populateWithInstrument(instrument: "trombone")
+        
     }
 
     override func didReceiveMemoryWarning() {

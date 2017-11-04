@@ -11,12 +11,18 @@ import UIKit
 class NoteObject: NSObject {
 
     var staveIndex: Int! = 0
+    var stavePosition: Float! = 0
     var note: String! = ""
     var position: String! = ""
-    var isShart: Bool = false
+    var isSharp: Bool = false
     var isFlat: Bool = false
     
     init(data: [String:Any]) {
-        
+        self.staveIndex = data["staveIndex"] as! Int
+        self.stavePosition = data["stavePosition"] as! Float
+        self.note = data["note"] as! String
+        self.position = data["position"] as! String
+        self.isSharp = data["isSharp"] as! Bool
+        self.isFlat = data["isFlat"] as! Bool
     }
 }

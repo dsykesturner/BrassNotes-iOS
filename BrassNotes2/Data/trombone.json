@@ -1,10 +1,11 @@
 {
-    "clef":"base",
-    "startingNoteIndex":7,
+    "clef":"bass",
+    "startingNoteIndex":-7,
     "notes":
     [
      {
      "staveIndex":-13,
+     "stavePosition":4.5,
      "note":"E",
      "position":"7th",
      "isSharp":false,
@@ -12,6 +13,7 @@
      },
      {
      "staveIndex":-12,
+     "stavePosition":4,
      "note":"F",
      "position":"6th",
      "isSharp":false,
@@ -19,6 +21,7 @@
      },
      {
      "staveIndex":-11,
+     "stavePosition":4,
      "note":"F♯ or G♭",
      "position":"5th",
      "isSharp":true,
@@ -26,6 +29,7 @@
      },
      {
      "staveIndex":-10,
+     "stavePosition":3.5,
      "note":"G",
      "position":"4th",
      "isSharp":false,
@@ -33,6 +37,7 @@
      },
      {
      "staveIndex":-9,
+     "stavePosition":3.5,
      "note":"G♯ or A♭",
      "position":"3rd",
      "isSharp":true,
@@ -40,6 +45,7 @@
      },
      {
      "staveIndex":-8,
+     "stavePosition":3,
      "note":"A",
      "position":"2nd",
      "isSharp":false,
@@ -47,6 +53,7 @@
      },
      {
      "staveIndex":-7,
+     "stavePosition":3,
      "note":"A♯ or B♭",
      "position":"1st",
      "isSharp":true,
@@ -54,6 +61,7 @@
      },
      {
      "staveIndex":-6,
+     "stavePosition":2.5,
      "note":"B",
      "position":"7th",
      "isSharp":false,
@@ -61,6 +69,7 @@
      },
      {
      "staveIndex":-5,
+     "stavePosition":2,
      "note":"C",
      "position":"6th",
      "isSharp":false,
@@ -68,6 +77,7 @@
      },
      {
      "staveIndex":-4,
+     "stavePosition":2,
      "note":"C♯ or D♭",
      "position":"5th",
      "isSharp":true,
@@ -75,6 +85,7 @@
      },
      {
      "staveIndex":-3,
+     "stavePosition":1.5,
      "note":"D",
      "position":"4th",
      "isSharp":false,
@@ -82,6 +93,7 @@
      },
      {
      "staveIndex":-2,
+     "stavePosition":1.5,
      "note":"D♯ or E♭",
      "position":"3rd",
      "isSharp":true,
@@ -89,6 +101,7 @@
      },
      {
      "staveIndex":-1,
+     "stavePosition":1,
      "note":"E",
      "position":"2nd or 7th",
      "isSharp":false,
@@ -96,6 +109,7 @@
      },
      {
      "staveIndex":0,
+     "stavePosition":0.5,
      "note":"F",
      "position":"1st or 6th",
      "isSharp":false,
@@ -103,6 +117,7 @@
      },
      {
      "staveIndex":1,
+     "stavePosition":0.5,
      "note":"F♯ or G♭",
      "position":"5th",
      "isSharp":true,
@@ -110,6 +125,7 @@
      },
      {
      "staveIndex":2,
+     "stavePosition":0,
      "note":"G",
      "position":"4th",
      "isSharp":false,
@@ -117,6 +133,7 @@
      },
      {
      "staveIndex":3,
+     "stavePosition":0,
      "note":"G♯ or A♭",
      "position":"3rd or 7th",
      "isSharp":true,
@@ -124,6 +141,7 @@
      },
      {
      "staveIndex":4,
+     "stavePosition":-0.5,
      "note":"A",
      "position":"2nd or 6th",
      "isSharp":false,
@@ -131,6 +149,7 @@
      },
      {
      "staveIndex":5,
+     "stavePosition":-0.5,
      "note":"A♯ or B♭",
      "position":"1st or 5th",
      "isSharp":true,
@@ -138,6 +157,7 @@
      },
      {
      "staveIndex":6,
+     "stavePosition":-1,
      "note":"B",
      "position":"4th or 7th",
      "isSharp":false,
@@ -145,6 +165,7 @@
      },
      {
      "staveIndex":7,
+     "stavePosition":-1.5,
      "note":"C",
      "position":"3rd or 6th",
      "isSharp":false,
@@ -152,6 +173,7 @@
      },
      {
      "staveIndex":8,
+     "stavePosition":-1.5,
      "note":"C♯ or D♭",
      "position":"2nd or 5th",
      "isSharp":true,
@@ -159,6 +181,7 @@
      },
      {
      "staveIndex":9,
+     "stavePosition":-2,
      "note":"D",
      "position":"1st or 4th",
      "isSharp":false,
