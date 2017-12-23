@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol StaveDelegate : NSObjectProtocol {
+    func staveDidChangeCurrentNote(_ note: NoteObject)
+}
+
 class Stave: UIView {
 
     @IBOutlet weak var imgClef: UIImageView!
@@ -17,8 +21,15 @@ class Stave: UIView {
     var aboveStaveLines: [UIView]?
     var belowStaveLines: [UIView]?
     
+    var delegate: StaveDelegate?
     var currentInstrument: InstrumentObject?
-    var currentNote: NoteObject?
+    var currentNote: NoteObject? {
+        didSet {
+            if currentNote != nil && delegate?.staveDidChangeCurrentNote != nil {
+                delegate?.staveDidChangeCurrentNote(currentNote!)
+            }
+        }
+    }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -26,15 +37,18 @@ class Stave: UIView {
     
     func populateWithInstrument(instrument: String) {
         
+        // Read in the instrument JSON data and build the set of notes inside the instrumnet
         if let instrumentData = readJSONFile(filename: instrument) {
             currentInstrument = InstrumentObject(data: instrumentData)
+            // Loop through the notes to find out starting note
             for n in currentInstrument!.notes {
                 if n.staveIndex == currentInstrument?.startingNoteIndex {
                     currentNote = n
                     break
                 }
             }
-            buildStaveUI()
+            // Build our UI - must be done programmatically for adapting screen sizes
+            buildStaveUI(size: frame.size)
         }
     }
     
@@ -58,10 +72,10 @@ class Stave: UIView {
         }
     }
     
-    func buildStaveUI() {
+    func buildStaveUI(size: CGSize) {
         // Some quick constants
-        let vHeight = frame.size.height
-        let vWidth = frame.size.width
+        let vHeight = size.height
+        let vWidth = size.width
         
         // Clean up any existing UI
         for sl in staveLines {
@@ -77,16 +91,17 @@ class Stave: UIView {
         }
         
         // Get the first 5 lines
+        let lineHeight:CGFloat = 2.0
         for i in 0...4 {
-            let line = UIView(frame: CGRect.init(x: 0, y: vHeight/4*CGFloat(i), width: vWidth, height: 2))
+            let line = UIView(frame: CGRect.init(x: 0, y: vHeight/4*CGFloat(i), width: vWidth, height: lineHeight))
             line.backgroundColor = UIColor.white
             addSubview(line)
             staveLines?.append(line)
         }
         
-        // Image size is 346 x 181 px
+        // Image size (ratio) is 346 x 181 px
         let heightBetweenLines = vHeight/4
-        note.frame = CGRect.init(x: imgClef.frame.size.width+50, y: CGFloat(currentNote!.stavePosition)*(1.0+heightBetweenLines), width: heightBetweenLines/181*346, height: heightBetweenLines)
+        note.frame = CGRect.init(x: imgClef.frame.size.width+50, y: CGFloat(currentNote!.stavePosition)*(heightBetweenLines)+lineHeight/2, width: heightBetweenLines/181*346, height: heightBetweenLines)
         note.image = UIImage(named: "note")
         if note.superview == nil {
             addSubview(note)
@@ -94,12 +109,12 @@ class Stave: UIView {
     }
     
     func increaseNote() {
-        
+        let currentIndex = currentInstrument?.notes.index(of: currentNote!)
+        currentNote = currentInstrument?.notes[currentIndex!+1]
     }
     
     func decreaseNote() {
-        
+        let currentIndex = currentInstrument?.notes.index(of: currentNote!)
+        currentNote = currentInstrument?.notes[currentIndex!-1]
     }
-    
-    // TODO: write delegate to notify parent of updated note data to present
 }

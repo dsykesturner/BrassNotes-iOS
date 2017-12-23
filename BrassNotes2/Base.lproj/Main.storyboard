@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ZPZ-5k-0rP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ZPZ-5k-0rP">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -67,19 +67,17 @@
                                     <constraint firstItem="1Ij-oa-Sw1" firstAttribute="leading" secondItem="SdU-B4-1gJ" secondAttribute="leading" id="Z3Y-BG-KEl"/>
                                 </constraints>
                                 <connections>
-                                    <outlet property="imgClef" destination="1Ij-oa-Sw1" id="QKp-B8-Qxg"/>
+                                    <outlet property="imgClef" destination="1Ij-oa-Sw1" id="K8C-ud-Wq8"/>
                                 </connections>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eXS-Q6-5Mj">
-                                <rect key="frame" x="204" y="626" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eXS-Q6-5Mj">
+                                <rect key="frame" x="271" y="235" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FB9-lZ-UaB">
-                                <rect key="frame" x="204" y="655" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FB9-lZ-UaB">
+                                <rect key="frame" x="271" y="206" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -88,8 +86,12 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="SdU-B4-1gJ" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="4od-LR-KEl"/>
+                            <constraint firstItem="eXS-Q6-5Mj" firstAttribute="top" secondItem="FB9-lZ-UaB" secondAttribute="bottom" constant="8" id="797-A6-FAV"/>
+                            <constraint firstItem="FB9-lZ-UaB" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="66" id="E60-3r-1Bf"/>
                             <constraint firstItem="SdU-B4-1gJ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Gjy-xK-Gdh"/>
                             <constraint firstItem="SdU-B4-1gJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Ik3-jx-egC"/>
+                            <constraint firstAttribute="trailing" secondItem="FB9-lZ-UaB" secondAttribute="trailing" constant="62" id="ryY-xv-9p9"/>
+                            <constraint firstItem="eXS-Q6-5Mj" firstAttribute="trailing" secondItem="FB9-lZ-UaB" secondAttribute="trailing" id="sIw-dz-7Qc"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Some Instrument" id="s4h-Na-UfR">
@@ -107,7 +109,7 @@
                     <connections>
                         <outlet property="lblSelectedNote" destination="eXS-Q6-5Mj" id="dvX-tC-9eI"/>
                         <outlet property="lblSelectedPosition" destination="FB9-lZ-UaB" id="j8P-HR-Ppy"/>
-                        <outlet property="stave" destination="SdU-B4-1gJ" id="Fwu-jb-WKb"/>
+                        <outlet property="stave" destination="SdU-B4-1gJ" id="DLf-7D-sc3"/>
                         <outlet property="tabBar" destination="5P4-U7-CZW" id="dtM-8L-kzA"/>
                         <outlet property="testStepper" destination="Cf4-Mj-ybO" id="udM-a3-fyj"/>
                     </connections>
