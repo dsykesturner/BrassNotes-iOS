@@ -44,9 +44,9 @@ class ViewController: UIViewController, StaveDelegate, UITabBarDelegate {
     @IBAction func testStepperTapped(_ sender: Any) {
         
         if Int(testStepper.value) > countNoteValue {
-            stave.increaseNote()
+            stave.incrementNote()
         } else if Int(testStepper.value) < countNoteValue {
-            stave.decreaseNote()
+            stave.decrementNote()
         }
         countNoteValue = Int(testStepper.value)
     }
@@ -57,6 +57,21 @@ class ViewController: UIViewController, StaveDelegate, UITabBarDelegate {
         
         navigationController?.navigationBar.topItem?.title = instrument
         stave.populateWithInstrument(instrument: instrument.lowercased())
+        
+        // Set the range and current index of the stepper
+        if let currentInstrument = stave.currentInstrument {
+            let lowestNoteIndex = currentInstrument.notes.first!.staveIndex
+            let highestNoteIndex = currentInstrument.notes.last!.staveIndex
+            let currentNoteIndex = currentInstrument.startingNoteIndex
+            testStepper.minimumValue = Double(lowestNoteIndex!)
+            testStepper.maximumValue = Double(highestNoteIndex!)
+            testStepper.value = Double(currentNoteIndex!)
+            countNoteValue = currentNoteIndex!
+        } else {
+            print("ERROR: Could not find the current instrument even after populating")
+        }
+        
+        
     }
     
     // MARK: - StaveDelegate

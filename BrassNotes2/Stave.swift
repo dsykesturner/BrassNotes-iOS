@@ -16,7 +16,8 @@ class Stave: UIView {
 
     @IBOutlet weak var imgClef: UIImageView!
     
-    var note: UIImageView! = UIImageView()
+    var note1: UIImageView! = UIImageView()
+    var note2: UIImageView! = UIImageView()
     var staveLines: [UIView]! = [UIView]()
     var aboveStaveLines: [UIView]?
     var belowStaveLines: [UIView]?
@@ -25,6 +26,7 @@ class Stave: UIView {
     var currentInstrument: InstrumentObject?
     var currentNote: NoteObject? {
         didSet {
+            // Push the update to the delegate whenever a change is detected
             if currentNote != nil && delegate?.staveDidChangeCurrentNote != nil {
                 delegate?.staveDidChangeCurrentNote(currentNote!)
             }
@@ -40,19 +42,19 @@ class Stave: UIView {
         // Read in the instrument JSON data and build the set of notes inside the instrumnet
         if let instrumentData = readJSONFile(filename: instrument) {
             currentInstrument = InstrumentObject(data: instrumentData)
-            // Loop through the notes to find out starting note
-            for n in currentInstrument!.notes {
-                if n.staveIndex == currentInstrument?.startingNoteIndex {
-                    currentNote = n
-                    break
-                }
-            }
+            
+            // Determine the starting note
+            let lowestNote = currentInstrument!.notes.first
+            let startingNoteIndex = currentInstrument!.startingNoteIndex - lowestNote!.staveIndex
+            currentNote = currentInstrument?.notes[startingNoteIndex]
+
             // Build our UI - must be done programmatically for adapting screen sizes
             buildStaveUI(size: frame.size)
         }
     }
     
     func readJSONFile(filename: String) -> [String:Any]? {
+        
         if let file = Bundle.main.path(forResource: filename, ofType: "json"),
             let jsonData = NSData(contentsOfFile: file) as Data? {
         
@@ -67,12 +69,13 @@ class Stave: UIView {
             }
             
         } else {
-            print("Tried to open file name \(filename) which was not a json or had no contents.")
+            print("Tried to open file name '\(filename)' which was not a json file, or had no contents")
             return nil
         }
     }
     
     func buildStaveUI(size: CGSize) {
+        
         // Some quick constants
         let vHeight = size.height
         let vWidth = size.width
@@ -99,22 +102,45 @@ class Stave: UIView {
             staveLines?.append(line)
         }
         
+        // Update the note image/position
+        note1.image = UIImage(named: "note")
+        note2.image = UIImage(named: "note")
+        if note1.superview == nil {
+            addSubview(note1)
+        }
+        if note2.superview == nil {
+            addSubview(note2)
+        }
+        updateNotePosition(updatedNote: currentNote!)
+    }
+    
+    func updateNotePosition(updatedNote: NoteObject) {
+        
+        let lineHeight:CGFloat = 2.0
+        let heightBetweenLines = frame.size.height/4
+        
         // Image size (ratio) is 346 x 181 px
-        let heightBetweenLines = vHeight/4
-        note.frame = CGRect.init(x: imgClef.frame.size.width+50, y: CGFloat(currentNote!.stavePosition)*(heightBetweenLines)+lineHeight/2, width: heightBetweenLines/181*346, height: heightBetweenLines)
-        note.image = UIImage(named: "note")
-        if note.superview == nil {
-            addSubview(note)
+        note1.frame = CGRect.init(x: imgClef.frame.size.width+50, y: CGFloat(updatedNote.stavePosition)*(heightBetweenLines)+lineHeight/2, width: heightBetweenLines/181*346, height: heightBetweenLines)
+        
+        if updatedNote.isFlat && updatedNote.isSharp {
+            note2.isHidden = false
+            note2.frame = CGRect.init(x: imgClef.frame.size.width+150, y: CGFloat(updatedNote.stavePosition-0.5)*(heightBetweenLines)+lineHeight/2, width: heightBetweenLines/181*346, height: heightBetweenLines)
+        } else {
+            note2.isHidden = true
         }
     }
     
-    func increaseNote() {
+    func incrementNote() {
         let currentIndex = currentInstrument?.notes.index(of: currentNote!)
         currentNote = currentInstrument?.notes[currentIndex!+1]
+        
+        updateNotePosition(updatedNote: currentNote!)
     }
     
-    func decreaseNote() {
+    func decrementNote() {
         let currentIndex = currentInstrument?.notes.index(of: currentNote!)
         currentNote = currentInstrument?.notes[currentIndex!-1]
+        
+        updateNotePosition(updatedNote: currentNote!)
     }
 }
