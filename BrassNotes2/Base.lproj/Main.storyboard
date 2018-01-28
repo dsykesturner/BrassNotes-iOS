@@ -53,9 +53,9 @@
                                 <rect key="frame" x="16" y="342" width="343" height="128"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1Ij-oa-Sw1">
-                                        <rect key="frame" x="0.0" y="0.0" width="65" height="128"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="85" height="128"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="65" id="eNg-97-FWb"/>
+                                            <constraint firstAttribute="width" constant="85" id="eNg-97-FWb"/>
                                         </constraints>
                                     </imageView>
                                 </subviews>
