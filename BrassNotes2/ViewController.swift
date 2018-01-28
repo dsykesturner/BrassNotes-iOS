@@ -10,16 +10,11 @@ import UIKit
 
 class ViewController: UIViewController, StaveDelegate, UITabBarDelegate {
     
-
     @IBOutlet weak var tabBar: UITabBar!
-    
     @IBOutlet weak var lblSelectedPosition: UILabel!
     @IBOutlet weak var lblSelectedNote: UILabel!
-    
-    @IBOutlet weak var testStepper: UIStepper!
-    var countNoteValue: Int! = 0
-    
     @IBOutlet weak var stave: Stave!
+    var countNoteValue: Int! = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,15 +35,20 @@ class ViewController: UIViewController, StaveDelegate, UITabBarDelegate {
     }
 
     // MARK: - Interaction actions
-
-    @IBAction func testStepperTapped(_ sender: Any) {
+    
+    @IBAction func touchGestureDidPan(_ recognizer: UIPanGestureRecognizer) {
         
-        if Int(testStepper.value) > countNoteValue {
-            stave.incrementNote()
-        } else if Int(testStepper.value) < countNoteValue {
+        let translation = recognizer.translation(in: self.view)
+        let stepSize:CGFloat = 30
+
+        if (translation.y > stepSize) {
             stave.decrementNote()
+            recognizer.setTranslation(CGPoint.zero, in: view)
         }
-        countNoteValue = Int(testStepper.value)
+        if (translation.y < -stepSize) {
+            stave.incrementNote()
+            recognizer.setTranslation(CGPoint.zero, in: view)
+        }
     }
     
     // MARK: - Regaular methods
@@ -57,21 +57,6 @@ class ViewController: UIViewController, StaveDelegate, UITabBarDelegate {
         
         navigationController?.navigationBar.topItem?.title = instrument
         stave.populateWithInstrument(instrument: instrument.lowercased())
-        
-        // Set the range and current index of the stepper
-        if let currentInstrument = stave.currentInstrument {
-            let lowestNoteIndex = currentInstrument.notes.first!.staveIndex
-            let highestNoteIndex = currentInstrument.notes.last!.staveIndex
-            let currentNoteIndex = currentInstrument.startingNoteIndex
-            testStepper.minimumValue = Double(lowestNoteIndex!)
-            testStepper.maximumValue = Double(highestNoteIndex!)
-            testStepper.value = Double(currentNoteIndex!)
-            countNoteValue = currentNoteIndex!
-        } else {
-            print("ERROR: Could not find the current instrument even after populating")
-        }
-        
-        
     }
     
     // MARK: - StaveDelegate
@@ -88,16 +73,5 @@ class ViewController: UIViewController, StaveDelegate, UITabBarDelegate {
         // Populate the stave with the lowercased name of the tab item selected
         self.populateWithInstrument(instrument: item.title!)
     }
-    
-    
-    
-    
-//    override func viewWillTransition(to newSize: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-//        let newStaveSize = stave.conten
-////        let newStaveSize = size(forChildContentContainer: stave, withParentContainerSize: newSize)
-//        stave.buildStaveUI(size: newStaveSize)
-////        systemLayoutFittingSizeDidChange(forChildContentContainer: stave)
-//    }
-    
 }
 

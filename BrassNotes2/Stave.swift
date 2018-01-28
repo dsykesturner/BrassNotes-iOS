@@ -169,15 +169,19 @@ class Stave: UIView {
     
     func incrementNote() {
         let currentIndex = currentInstrument?.notes.index(of: currentNote!)
-        currentNote = currentInstrument?.notes[currentIndex!+1]
-        
-        updateNotePosition(updatedNote: currentNote!)
+        if (currentIndex! < (currentInstrument?.notes.count)!-1) {
+            currentNote = currentInstrument?.notes[currentIndex!+1]
+            
+            updateNotePosition(updatedNote: currentNote!)
+        }
     }
     
     func decrementNote() {
         let currentIndex = currentInstrument?.notes.index(of: currentNote!)
-        currentNote = currentInstrument?.notes[currentIndex!-1]
-        
-        updateNotePosition(updatedNote: currentNote!)
+        if (currentIndex! > 0) {
+            currentNote = currentInstrument?.notes[currentIndex!-1]
+            
+            updateNotePosition(updatedNote: currentNote!)
+        }
     }
 }

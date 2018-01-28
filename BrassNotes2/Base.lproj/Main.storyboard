@@ -84,6 +84,7 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="SdU-B4-1gJ" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="4od-LR-KEl"/>
                             <constraint firstItem="eXS-Q6-5Mj" firstAttribute="top" secondItem="FB9-lZ-UaB" secondAttribute="bottom" constant="8" id="797-A6-FAV"/>
@@ -93,28 +94,24 @@
                             <constraint firstAttribute="trailing" secondItem="FB9-lZ-UaB" secondAttribute="trailing" constant="62" id="ryY-xv-9p9"/>
                             <constraint firstItem="eXS-Q6-5Mj" firstAttribute="trailing" secondItem="FB9-lZ-UaB" secondAttribute="trailing" id="sIw-dz-7Qc"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Rd1-gg-f8i" appends="YES" id="TZ3-yq-Sal"/>
+                        </connections>
                     </view>
-                    <navigationItem key="navigationItem" title="Some Instrument" id="s4h-Na-UfR">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="1g0-DY-ykk">
-                            <stepper key="customView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" id="Cf4-Mj-ybO">
-                                <rect key="frame" x="265" y="7.6666666666666679" width="94" height="29.000000000000004"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <connections>
-                                    <action selector="testStepperTapped:" destination="BYZ-38-t0r" eventType="valueChanged" id="LbG-GY-Nfx"/>
-                                </connections>
-                            </stepper>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Some Instrument" id="s4h-Na-UfR"/>
                     <connections>
                         <outlet property="lblSelectedNote" destination="eXS-Q6-5Mj" id="dvX-tC-9eI"/>
                         <outlet property="lblSelectedPosition" destination="FB9-lZ-UaB" id="j8P-HR-Ppy"/>
                         <outlet property="stave" destination="SdU-B4-1gJ" id="DLf-7D-sc3"/>
                         <outlet property="tabBar" destination="5P4-U7-CZW" id="dtM-8L-kzA"/>
-                        <outlet property="testStepper" destination="Cf4-Mj-ybO" id="udM-a3-fyj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="Rd1-gg-f8i">
+                    <connections>
+                        <action selector="touchGestureDidPan:" destination="BYZ-38-t0r" id="tuQ-8L-0NF"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="594" y="-389"/>
         </scene>
