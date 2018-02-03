@@ -21,8 +21,8 @@ class Stave: UIView {
     var flat: UILabel! = UILabel()
     var sharp: UILabel! = UILabel()
     var staveLines: [UIView]! = [UIView]()
-    var aboveStaveLines: [UIView]?
-    var belowStaveLines: [UIView]?
+    var aboveStaveLines: [UIView]! = [UIView]()
+    var belowStaveLines: [UIView]! = [UIView]()
     
     var delegate: StaveDelegate?
     var currentInstrument: InstrumentObject?
@@ -155,7 +155,6 @@ class Stave: UIView {
         if updatedNote.isSharp {
             sharp.isHidden = false
             sharp.frame = CGRect.init(x: sharpX, y: note1.frame.origin.y, width: note1.frame.size.width/sizeDifferenceToNote, height: note1.frame.size.height)
-
         } else {
             sharp.isHidden = true
         }
@@ -164,6 +163,76 @@ class Stave: UIView {
             flat.frame = CGRect.init(x: flatX, y: note2.frame.origin.y, width: note2.frame.size.width/sizeDifferenceToNote, height: note2.frame.size.height)
         } else {
             flat.isHidden = true
+        }
+
+        
+        // First clean out existing above/below stave lines
+        for line in aboveStaveLines {
+            line.removeFromSuperview()
+        }
+        aboveStaveLines.removeAll()
+        for line in belowStaveLines {
+            line.removeFromSuperview()
+        }
+        belowStaveLines.removeAll()
+        
+        // Determine whether the notes are in range for an above stave additional line
+        if (updatedNote.stavePosition <= -1) {
+            
+            // Keep track of the remaining steps to check for a line
+            var remaining = CGFloat(updatedNote.stavePosition+0.5)
+            while remaining < 0 {
+                
+                // Make sure we are on a correct line position to place
+                if Int(remaining*2) % 2 == 0 {
+                    // Place a line at a note if it's not hidden
+                    if !note2.isHidden {
+                        // Note 2's turn for a line
+                        let line = UIView(frame: CGRect.init(x: note2.frame.origin.x-note2.frame.size.width*0.1, y: heightBetweenLines*remaining, width: note2.frame.size.width*1.2, height: lineHeight))
+                        line.backgroundColor = UIColor.white
+                        self.addSubview(line)
+                        aboveStaveLines?.append(line)
+                    }
+                    if !note1.isHidden {
+                        // Note 1's turn for a line
+                        let line = UIView(frame: CGRect.init(x: note1.frame.origin.x-note1.frame.size.width*0.1, y: heightBetweenLines*remaining, width: note1.frame.size.width*1.2, height: lineHeight))
+                        line.backgroundColor = UIColor.white
+                        self.addSubview(line)
+                        aboveStaveLines?.append(line)
+                    }
+                }
+                
+                remaining += 0.5
+            }
+        }
+        
+        // Determine whether the notes are in range for an above stave additional line
+        if (updatedNote.stavePosition >= 4.5) {
+            
+            // Keep track of the remaining steps to check for a line
+            var remaining = CGFloat(updatedNote.stavePosition+0.5)
+            while remaining > 4 {
+                
+                // Make sure we are on a correct line position to place
+                if Int(remaining*2) % 2 == 0 {
+                    if !note2.isHidden {
+                        // Note 2's turn for a line
+                        let line = UIView(frame: CGRect.init(x: note2.frame.origin.x-note2.frame.size.width*0.1, y: heightBetweenLines*remaining, width: note2.frame.size.width*1.2, height: lineHeight))
+                        line.backgroundColor = UIColor.white
+                        self.addSubview(line)
+                        belowStaveLines?.append(line)
+                    }
+                    if !note1.isHidden {
+                        // Note 1's turn for a line
+                        let line = UIView(frame: CGRect.init(x: note1.frame.origin.x-note1.frame.size.width*0.1, y: heightBetweenLines*remaining, width: note1.frame.size.width*1.2, height: lineHeight))
+                        line.backgroundColor = UIColor.white
+                        self.addSubview(line)
+                        belowStaveLines?.append(line)
+                    }
+                }
+                
+                remaining -= 0.5
+            }
         }
     }
     
