@@ -9,6 +9,11 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Navigation Controller-->
         <scene sceneID="VUX-B6-dHj">
@@ -17,6 +22,9 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" largeTitles="YES" id="s4a-te-HLM">
                         <rect key="frame" x="0.0" y="44" width="375" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="33"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="e5V-HS-pv0"/>
@@ -70,15 +78,15 @@
                                     <outlet property="imgClef" destination="1Ij-oa-Sw1" id="K8C-ud-Wq8"/>
                                 </connections>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eXS-Q6-5Mj">
-                                <rect key="frame" x="271" y="235" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A# or B♭" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FB9-lZ-UaB">
+                                <rect key="frame" x="24.000000000000007" y="156" width="92.666666666666686" height="28"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="24"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FB9-lZ-UaB">
-                                <rect key="frame" x="271" y="206" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1st" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eXS-Q6-5Mj">
+                                <rect key="frame" x="318" y="156" width="33" height="28"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="24"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -86,13 +94,13 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="FB9-lZ-UaB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="8" id="4mY-Te-xMo"/>
                             <constraint firstItem="SdU-B4-1gJ" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="4od-LR-KEl"/>
-                            <constraint firstItem="eXS-Q6-5Mj" firstAttribute="top" secondItem="FB9-lZ-UaB" secondAttribute="bottom" constant="8" id="797-A6-FAV"/>
-                            <constraint firstItem="FB9-lZ-UaB" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="66" id="E60-3r-1Bf"/>
                             <constraint firstItem="SdU-B4-1gJ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Gjy-xK-Gdh"/>
                             <constraint firstItem="SdU-B4-1gJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Ik3-jx-egC"/>
-                            <constraint firstAttribute="trailing" secondItem="FB9-lZ-UaB" secondAttribute="trailing" constant="62" id="ryY-xv-9p9"/>
-                            <constraint firstItem="eXS-Q6-5Mj" firstAttribute="trailing" secondItem="FB9-lZ-UaB" secondAttribute="trailing" id="sIw-dz-7Qc"/>
+                            <constraint firstItem="eXS-Q6-5Mj" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="16" id="IrP-vQ-GQ2"/>
+                            <constraint firstItem="FB9-lZ-UaB" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="16" id="XXs-FQ-nlr"/>
+                            <constraint firstItem="eXS-Q6-5Mj" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" constant="-8" id="jIP-NN-tVm"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="Rd1-gg-f8i" appends="YES" id="TZ3-yq-Sal"/>
@@ -100,8 +108,8 @@
                     </view>
                     <navigationItem key="navigationItem" title="Some Instrument" id="s4h-Na-UfR"/>
                     <connections>
-                        <outlet property="lblSelectedNote" destination="eXS-Q6-5Mj" id="dvX-tC-9eI"/>
-                        <outlet property="lblSelectedPosition" destination="FB9-lZ-UaB" id="j8P-HR-Ppy"/>
+                        <outlet property="lblSelectedNote" destination="FB9-lZ-UaB" id="6V9-yr-CS2"/>
+                        <outlet property="lblSelectedPosition" destination="eXS-Q6-5Mj" id="fOh-3Q-wnD"/>
                         <outlet property="stave" destination="SdU-B4-1gJ" id="DLf-7D-sc3"/>
                         <outlet property="tabBar" destination="5P4-U7-CZW" id="dtM-8L-kzA"/>
                     </connections>
