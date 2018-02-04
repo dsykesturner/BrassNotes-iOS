@@ -4,6 +4,62 @@
     "notes":
     [
      {
+     "staveIndex":-20,
+     "stavePosition":8,
+     "note":"E",
+     "position":"7th",
+     "isSharp":false,
+     "isFlat":false
+     },
+     {
+     "staveIndex":-19,
+     "stavePosition":7.5,
+     "note":"F",
+     "position":"6th",
+     "isSharp":false,
+     "isFlat":false
+     },
+     {
+     "staveIndex":-18,
+     "stavePosition":7.5,
+     "note":"F♯ or G♭",
+     "position":"5th",
+     "isSharp":true,
+     "isFlat":true
+     },
+     {
+     "staveIndex":-17,
+     "stavePosition":7,
+     "note":"G",
+     "position":"4th",
+     "isSharp":false,
+     "isFlat":false
+     },
+     {
+     "staveIndex":-16,
+     "stavePosition":7,
+     "note":"G♯ or A♭",
+     "position":"3rd",
+     "isSharp":true,
+     "isFlat":true
+     },
+     {
+     "staveIndex":-15,
+     "stavePosition":6.5,
+     "note":"A",
+     "position":"2nd",
+     "isSharp":false,
+     "isFlat":false
+     },
+     {
+     "staveIndex":-14,
+     "stavePosition":6.5,
+     "note":"A♯ or B♭",
+     "position":"1st",
+     "isSharp":true,
+     "isFlat":true
+     },
+     {
      "staveIndex":-13,
      "stavePosition":4.5,
      "note":"E",
