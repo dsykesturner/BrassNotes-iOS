@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		657F06142026ED5000E93FFD /* trumpet.json in Resources */ = {isa = PBXBuildFile; fileRef = 657F06132026ED5000E93FFD /* trumpet.json */; };
+		657F06172026EDB200E93FFD /* euphonium.json in Resources */ = {isa = PBXBuildFile; fileRef = 657F06152026EDB200E93FFD /* euphonium.json */; };
+		657F06182026EDB200E93FFD /* tuba.json in Resources */ = {isa = PBXBuildFile; fileRef = 657F06162026EDB200E93FFD /* tuba.json */; };
 		65F259831F0F4172007BCBFC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F259821F0F4172007BCBFC /* AppDelegate.swift */; };
 		65F259851F0F4172007BCBFC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F259841F0F4172007BCBFC /* ViewController.swift */; };
 		65F259881F0F4172007BCBFC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65F259861F0F4172007BCBFC /* Main.storyboard */; };
@@ -38,6 +41,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		657F06132026ED5000E93FFD /* trumpet.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = trumpet.json; path = Data/trumpet.json; sourceTree = "<group>"; };
+		657F06152026EDB200E93FFD /* euphonium.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = euphonium.json; path = Data/euphonium.json; sourceTree = "<group>"; };
+		657F06162026EDB200E93FFD /* tuba.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = tuba.json; path = Data/tuba.json; sourceTree = "<group>"; };
 		65F2597F1F0F4172007BCBFC /* BrassNotes2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BrassNotes2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65F259821F0F4172007BCBFC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		65F259841F0F4172007BCBFC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -141,6 +147,9 @@
 			isa = PBXGroup;
 			children = (
 				65F259B31F0F52D9007BCBFC /* trombone.json */,
+				657F06152026EDB200E93FFD /* euphonium.json */,
+				657F06162026EDB200E93FFD /* tuba.json */,
+				657F06132026ED5000E93FFD /* trumpet.json */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -258,7 +267,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				657F06182026EDB200E93FFD /* tuba.json in Resources */,
+				657F06142026ED5000E93FFD /* trumpet.json in Resources */,
 				65F2598D1F0F4172007BCBFC /* LaunchScreen.storyboard in Resources */,
+				657F06172026EDB200E93FFD /* euphonium.json in Resources */,
 				65F2598A1F0F4172007BCBFC /* Assets.xcassets in Resources */,
 				65F259881F0F4172007BCBFC /* Main.storyboard in Resources */,
 				65F259B41F0F52D9007BCBFC /* trombone.json in Resources */,
