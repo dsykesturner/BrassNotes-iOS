@@ -22,11 +22,15 @@ class ViewController: UIViewController, StaveDelegate, UITabBarDelegate {
         // Setup delegates
         stave.delegate = self
         tabBar.delegate = self
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         
-        // Setup the default selection
+        // Setup the default selection once the auto-constraints have sorted out
         let defaultItem:UITabBarItem = tabBar.items![1]
-        tabBar.selectedItem = defaultItem
         populateWithInstrument(instrument: defaultItem.title!)
+        tabBar.selectedItem = defaultItem
     }
     
     override func didReceiveMemoryWarning() {

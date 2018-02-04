@@ -104,15 +104,17 @@ class Stave: UIView {
             staveLines?.append(line)
         }
         
+        let heightBetweenLines = frame.size.height/4
+        let accidentalSize = heightBetweenLines*1.7
         // Update the note image/position
         note1.image = UIImage(named: "note")
         note2.image = UIImage(named: "note")
         flat.text = "♭"
         flat.textColor = UIColor.white
-        flat.font = UIFont(name: "Helvetica", size: 42)
+        flat.font = UIFont(name: "Helvetica", size: accidentalSize)
         sharp.text = "♯"
         sharp.textColor = UIColor.white
-        sharp.font = UIFont(name: "Helvetica", size: 42)
+        sharp.font = UIFont(name: "Helvetica", size: accidentalSize)
         if note1.superview == nil {
             addSubview(note1)
         }
@@ -151,16 +153,16 @@ class Stave: UIView {
             note2.isHidden = true
         }
         
-        let sizeDifferenceToNote:CGFloat = 1.5
+        let accidentalSize:CGFloat = heightBetweenLines*1.7
         if updatedNote.isSharp {
             sharp.isHidden = false
-            sharp.frame = CGRect.init(x: sharpX, y: note1.frame.origin.y, width: note1.frame.size.width/sizeDifferenceToNote, height: note1.frame.size.height)
+            sharp.frame = CGRect.init(x: sharpX, y: note1.frame.origin.y, width: accidentalSize, height: note1.frame.size.height)
         } else {
             sharp.isHidden = true
         }
         if updatedNote.isFlat {
             flat.isHidden = false
-            flat.frame = CGRect.init(x: flatX, y: note2.frame.origin.y, width: note2.frame.size.width/sizeDifferenceToNote, height: note2.frame.size.height)
+            flat.frame = CGRect.init(x: flatX, y: note2.frame.origin.y, width: accidentalSize, height: note2.frame.size.height)
         } else {
             flat.isHidden = true
         }
