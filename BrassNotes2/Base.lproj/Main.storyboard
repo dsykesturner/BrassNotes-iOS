@@ -56,6 +56,7 @@
                                     <tabBarItem title="Trombone" id="ywX-Xn-7R9"/>
                                     <tabBarItem title="Euphonium" id="lDM-BD-Okz"/>
                                     <tabBarItem title="Tuba" id="7b4-Be-102"/>
+                                    <tabBarItem title="French Horn" id="2id-Ya-3tx" userLabel="French Horn"/>
                                 </items>
                             </tabBar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SdU-B4-1gJ" customClass="Stave" customModule="BrassNotes2" customModuleProvider="target">
