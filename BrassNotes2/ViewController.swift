@@ -43,7 +43,7 @@ class ViewController: UIViewController, StaveDelegate, UITabBarDelegate {
     @IBAction func touchGestureDidPan(_ recognizer: UIPanGestureRecognizer) {
         
         let translation = recognizer.translation(in: self.view)
-        let stepSize:CGFloat = 30
+        let stepSize:CGFloat = 20
 
         if (translation.y > stepSize) {
             stave.decrementNote()

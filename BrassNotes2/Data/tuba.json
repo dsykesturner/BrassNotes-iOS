@@ -1,8 +1,311 @@
 {
     "clef":"bass",
-    "startingNoteIndex":0,
+    "startingNoteIndex":-7,
     "notes":
     [
-    
+     {
+     "staveIndex":-32,
+     "stavePosition":11.5,
+     "note":"E",
+     "position":"1-2-3 or 2-4",
+     "isSharp":false,
+     "isFlat":false
+     },
+     {
+     "staveIndex":-31,
+     "stavePosition":11,
+     "note":"F",
+     "position":"1-3 or 4",
+     "isSharp":false,
+     "isFlat":false
+     },
+     {
+     "staveIndex":-30,
+     "stavePosition":11,
+     "note":"F♯ or G♭",
+     "position":"2-3",
+     "isSharp":true,
+     "isFlat":true
+     },
+     {
+     "staveIndex":-29,
+     "stavePosition":10.5,
+     "note":"G",
+     "position":"1-2",
+     "isSharp":false,
+     "isFlat":false
+     },
+     {
+     "staveIndex":-28,
+     "stavePosition":10.5,
+     "note":"G♯ or A♭",
+     "position":"1",
+     "isSharp":true,
+     "isFlat":true
+     },
+     {
+     "staveIndex":-27,
+     "stavePosition":10,
+     "note":"A",
+     "position":"2",
+     "isSharp":false,
+     "isFlat":false
+     },
+     {
+     "staveIndex":-26,
+     "stavePosition":10,
+     "note":"A♯ or B♭",
+     "position":"0",
+     "isSharp":true,
+     "isFlat":true
+     },
+     {
+     "staveIndex":-25,
+     "stavePosition":8,
+     "note":"E",
+     "position":"1-2-3 or 2-4",
+     "isSharp":false,
+     "isFlat":false
+     },
+     {
+     "staveIndex":-24,
+     "stavePosition":7.5,
+     "note":"F",
+     "position":"1-3 or 4",
+     "isSharp":false,
+     "isFlat":false
+     },
+     {
+     "staveIndex":-23,
+     "stavePosition":7.5,
+     "note":"F♯ or G♭",
+     "position":"2-3",
+     "isSharp":true,
+     "isFlat":true
+     },
+     {
+     "staveIndex":-22,
+     "stavePosition":7,
+     "note":"G",
+     "position":"1-2",
+     "isSharp":false,
+     "isFlat":false
+     },
+     {
+     "staveIndex":-21,
+     "stavePosition":7,
+     "note":"G♯ or A♭",
+     "position":"1",
+     "isSharp":true,
+     "isFlat":true
+     },
+     {
+     "staveIndex":-20,
+     "stavePosition":6.5,
+     "note":"A",
+     "position":"2",
+     "isSharp":false,
+     "isFlat":false
+     },
+     {
+     "staveIndex":-19,
+     "stavePosition":6.5,
+     "note":"A♯ or B♭",
+     "position":"0",
+     "isSharp":true,
+     "isFlat":true
+     },
+     {
+     "staveIndex":-18,
+     "stavePosition":6,
+     "note":"B",
+     "position":"1-2-3 or 2-4",
+     "isSharp":false,
+     "isFlat":false
+     },
+     {
+     "staveIndex":-17,
+     "stavePosition":5.5,
+     "note":"C",
+     "position":"1-3 or 4",
+     "isSharp":false,
+     "isFlat":false
+     },
+     {
+     "staveIndex":-16,
+     "stavePosition":5.5,
+     "note":"C♯ or D♭",
+     "position":"2-3",
+     "isSharp":true,
+     "isFlat":true
+     },
+     {
+     "staveIndex":-15,
+     "stavePosition":5,
+     "note":"D",
+     "position":"1-2",
+     "isSharp":false,
+     "isFlat":false
+     },
+     {
+     "staveIndex":-14,
+     "stavePosition":5,
+     "note":"D♯ or E♭",
+     "position":"1",
+     "isSharp":true,
+     "isFlat":true
+     },
+     {
+     "staveIndex":-13,
+     "stavePosition":4.5,
+     "note":"E",
+     "position":"2 or 1-2-3 or 2-4",
+     "isSharp":false,
+     "isFlat":false
+     },
+     {
+     "staveIndex":-12,
+     "stavePosition":4,
+     "note":"F",
+     "position":"0 or 1-3 or 4",
+     "isSharp":false,
+     "isFlat":false
+     },
+     {
+     "staveIndex":-11,
+     "stavePosition":4,
+     "note":"F♯ or G♭",
+     "position":"2-3",
+     "isSharp":true,
+     "isFlat":true
+     },
+     {
+     "staveIndex":-10,
+     "stavePosition":3.5,
+     "note":"G",
+     "position":"1-2",
+     "isSharp":false,
+     "isFlat":false
+     },
+     {
+     "staveIndex":-9,
+     "stavePosition":3.5,
+     "note":"G♯ or A♭",
+     "position":"1 or 1-2-3 or 2-4",
+     "isSharp":true,
+     "isFlat":true
+     },
+     {
+     "staveIndex":-8,
+     "stavePosition":3,
+     "note":"A",
+     "position":"2 or 1-3 or 4",
+     "isSharp":false,
+     "isFlat":false
+     },
+     {
+     "staveIndex":-7,
+     "stavePosition":3,
+     "note":"A♯ or B♭",
+     "position":"0 or 2-3",
+     "isSharp":true,
+     "isFlat":true
+     },
+     {
+     "staveIndex":-6,
+     "stavePosition":2.5,
+     "note":"B",
+     "position":"1-2 or 1-2-3 or 2-4",
+     "isSharp":false,
+     "isFlat":false
+     },
+     {
+     "staveIndex":-5,
+     "stavePosition":2,
+     "note":"C",
+     "position":"1 or 1-3 or 4",
+     "isSharp":false,
+     "isFlat":false
+     },
+     {
+     "staveIndex":-4,
+     "stavePosition":2,
+     "note":"C♯ or D♭",
+     "position":"2 or 2-3",
+     "isSharp":true,
+     "isFlat":true
+     },
+     {
+     "staveIndex":-3,
+     "stavePosition":1.5,
+     "note":"D",
+     "position":"0 or 1-2 or 1-2-3 or 2-4",
+     "isSharp":false,
+     "isFlat":false
+     },
+     {
+     "staveIndex":-2,
+     "stavePosition":1.5,
+     "note":"D♯ or E♭",
+     "position":"1 or 1-3 or 4",
+     "isSharp":true,
+     "isFlat":true
+     },
+     {
+     "staveIndex":-1,
+     "stavePosition":1,
+     "note":"E",
+     "position":"2 or 2-3 or 1-2-3 or 2-4",
+     "isSharp":false,
+     "isFlat":false
+     },
+     {
+     "staveIndex":0,
+     "stavePosition":0.5,
+     "note":"F",
+     "position":"0 or 1-2 or 1-3 or 4",
+     "isSharp":false,
+     "isFlat":false
+     },
+     {
+     "staveIndex":1,
+     "stavePosition":0.5,
+     "note":"F♯ or G♭",
+     "position":"1 or 2-3",
+     "isSharp":true,
+     "isFlat":true
+     },
+     {
+     "staveIndex":2,
+     "stavePosition":0,
+     "note":"G",
+     "position":"2 or 1-2",
+     "isSharp":false,
+     "isFlat":false
+     },
+     {
+     "staveIndex":3,
+     "stavePosition":0,
+     "note":"G♯ or A♭",
+     "position":"0 or 1",
+     "isSharp":true,
+     "isFlat":true
+     },
+     {
+     "staveIndex":4,
+     "stavePosition":-0.5,
+     "note":"A",
+     "position":"2",
+     "isSharp":false,
+     "isFlat":false
+     },
+     {
+     "staveIndex":5,
+     "stavePosition":-0.5,
+     "note":"A♯ or B♭",
+     "position":"0",
+     "isSharp":true,
+     "isFlat":true
+     }
     ]
 }
