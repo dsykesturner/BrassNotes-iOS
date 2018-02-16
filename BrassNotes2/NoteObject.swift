@@ -22,7 +22,7 @@ class NoteObject: NSObject {
         self.stavePosition = data["stavePosition"] as! Float
         self.note = data["note"] as! String
         self.position = data["position"] as! String
-        self.isSharp = data["isSharp"] as! Bool
-        self.isFlat = data["isFlat"] as! Bool
+        self.isSharp = self.note.contains("♯")
+        self.isFlat = self.note.contains("♭")
     }
 }
