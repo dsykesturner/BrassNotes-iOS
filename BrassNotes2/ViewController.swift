@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController, StaveDelegate, UITabBarDelegate {
     
     @IBOutlet weak var tabBar: UITabBar!
+    @IBOutlet weak var imgBackgroundClef: UIImageView!
     @IBOutlet weak var lblSelectedPosition: UILabel!
     @IBOutlet weak var lblSelectedNote: UILabel!
     @IBOutlet weak var stave: Stave!
@@ -61,6 +62,12 @@ class ViewController: UIViewController, StaveDelegate, UITabBarDelegate {
         
         navigationController?.navigationBar.topItem?.title = instrument
         stave.populateWithInstrument(instrument: instrument.lowercased())
+        
+        if stave.currentInstrument?.clef == "bass" {
+            imgBackgroundClef.image = UIImage(named: "BassClef")
+        } else {
+            imgBackgroundClef.image = UIImage(named: "TrebleClef")
+        }
     }
     
     // MARK: - StaveDelegate

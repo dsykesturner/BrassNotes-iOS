@@ -14,7 +14,8 @@ protocol StaveDelegate : NSObjectProtocol {
 
 class Stave: UIView {
 
-    @IBOutlet weak var imgClef: UIImageView!
+    @IBOutlet weak var imgBassClef: UIImageView!
+    @IBOutlet weak var imgTrebleClef: UIImageView!
     
     var note1: UIImageView! = UIImageView()
     var note2: UIImageView! = UIImageView()
@@ -89,11 +90,8 @@ class Stave: UIView {
         staveLines.removeAll()
         
         // Set the clef image
-        if currentInstrument?.clef == "bass" {
-            imgClef.image = UIImage(named: "BassClef")
-        } else {
-            imgClef.image = UIImage(named: "TrebleClef")
-        }
+        imgBassClef.isHidden = currentInstrument?.clef != "bass"
+        imgTrebleClef.isHidden = currentInstrument?.clef == "bass"
         
         // Get the first 5 lines
         let lineHeight:CGFloat = 2.0
@@ -135,12 +133,14 @@ class Stave: UIView {
         let lineHeight:CGFloat = 2.0
         let heightBetweenLines = frame.size.height/4
         
-        // Note area =         (stave width - clef width) / (2 notes) * (first 1/3 or 1.1/3 of the space) + stave width
-        let note1X = (self.frame.size.width - imgClef.frame.size.width) / 2 * (1/3) + imgClef.frame.size.width
-        let note2X = (self.frame.size.width - imgClef.frame.size.width) / 2 * (1+1/3) + imgClef.frame.size.width
-        // Sharp/flat area =   (stave width - clef width) / (2 notes) * (1.0 of the space) + stave width
-        let sharpX = imgClef.frame.size.width
-        let flatX = (self.frame.size.width - imgClef.frame.size.width) / 2 + imgClef.frame.size.width
+        let clefEndCoord = imgBassClef.isHidden ? (imgBassClef.frame.origin.x+imgBassClef.frame.size.width) : (imgTrebleClef.frame.origin.x+imgTrebleClef.frame.size.width)
+        
+        // Note area =         (stave width - clef end coord) / (2 notes) * (first 1/3 or 1.1/3 of the space) + clef end coord
+        let note1X = (self.frame.size.width - clefEndCoord) / 2 * (1/3) + clefEndCoord
+        let note2X = (self.frame.size.width - clefEndCoord) / 2 * (1+1/3) + clefEndCoord
+        // Sharp/flat area =   (stave width - clef end coord) / (2 notes) * (1.0 of the space) + clef end coord
+        let sharpX = clefEndCoord
+        let flatX = (self.frame.size.width - clefEndCoord) / 2 + clefEndCoord
         
         // Image size (ratio) is 346 x 181 px
         note1.frame = CGRect.init(x: note1X, y: CGFloat(updatedNote.stavePosition)*(heightBetweenLines)+lineHeight/2, width: heightBetweenLines/181*346, height: heightBetweenLines)
