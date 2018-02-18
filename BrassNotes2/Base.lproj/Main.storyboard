@@ -57,20 +57,20 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BassClef" translatesAutoresizingMaskIntoConstraints="NO" id="1Ij-oa-Sw1">
                                         <rect key="frame" x="5" y="1" width="85" height="83.333333333333329"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="85" id="eNg-97-FWb"/>
+                                            <constraint firstAttribute="width" secondItem="1Ij-oa-Sw1" secondAttribute="height" multiplier="85:83" id="fsf-to-PLc"/>
                                         </constraints>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TrebleClef" translatesAutoresizingMaskIntoConstraints="NO" id="62y-fc-R5d">
-                                        <rect key="frame" x="0.0" y="-35" width="85" height="179.33333333333334"/>
+                                        <rect key="frame" x="0.0" y="-35" width="82.666666666666671" height="174.33333333333334"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="85" id="qhb-5v-Bf2"/>
+                                            <constraint firstAttribute="width" secondItem="62y-fc-R5d" secondAttribute="height" multiplier="85:179" id="71k-y3-AJr"/>
                                         </constraints>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.16389973958333334" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="62y-fc-R5d" firstAttribute="top" secondItem="SdU-B4-1gJ" secondAttribute="top" constant="-35" id="562-k3-6ba"/>
-                                    <constraint firstAttribute="bottom" secondItem="62y-fc-R5d" secondAttribute="bottom" constant="-45" id="9Pl-cB-k5h"/>
+                                    <constraint firstAttribute="bottom" secondItem="62y-fc-R5d" secondAttribute="bottom" constant="-40" id="9Pl-cB-k5h"/>
                                     <constraint firstAttribute="bottom" secondItem="1Ij-oa-Sw1" secondAttribute="bottom" constant="15" id="9lY-5o-t9I"/>
                                     <constraint firstItem="62y-fc-R5d" firstAttribute="leading" secondItem="SdU-B4-1gJ" secondAttribute="leading" id="BgQ-Lm-4TS"/>
                                     <constraint firstItem="1Ij-oa-Sw1" firstAttribute="top" secondItem="SdU-B4-1gJ" secondAttribute="top" constant="1" id="JCb-Vi-SW9"/>
