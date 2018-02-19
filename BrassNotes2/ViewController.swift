@@ -32,6 +32,11 @@ class ViewController: UIViewController, StaveDelegate, UITabBarDelegate {
         let defaultItem:UITabBarItem = tabBar.items![1]
         populateWithInstrument(instrument: defaultItem.title!)
         tabBar.selectedItem = defaultItem
+        
+        // Adjust the font size depending on the screen size
+        let fontSize = (stave.frame.size.height/4)*1.2
+        lblSelectedNote.font = UIFont(name: "Helvetica", size: fontSize)
+        lblSelectedPosition.font = UIFont(name: "Helvetica", size: fontSize)
     }
     
     override func didReceiveMemoryWarning() {
