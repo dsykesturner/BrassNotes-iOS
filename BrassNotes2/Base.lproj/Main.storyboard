@@ -54,7 +54,7 @@
                                 <rect key="frame" x="24" y="368.66666666666669" width="327" height="75"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BassClef" translatesAutoresizingMaskIntoConstraints="NO" id="1Ij-oa-Sw1">
-                                        <rect key="frame" x="4.9999999999999964" y="1" width="59.666666666666657" height="59"/>
+                                        <rect key="frame" x="5" y="1" width="65" height="64"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="1Ij-oa-Sw1" secondAttribute="height" multiplier="85:83" id="fsf-to-PLc"/>
                                         </constraints>
@@ -70,7 +70,7 @@
                                 <constraints>
                                     <constraint firstItem="62y-fc-R5d" firstAttribute="top" secondItem="SdU-B4-1gJ" secondAttribute="top" constant="-35" id="562-k3-6ba"/>
                                     <constraint firstAttribute="bottom" secondItem="62y-fc-R5d" secondAttribute="bottom" constant="-40" id="9Pl-cB-k5h"/>
-                                    <constraint firstAttribute="bottom" secondItem="1Ij-oa-Sw1" secondAttribute="bottom" constant="15" id="9lY-5o-t9I"/>
+                                    <constraint firstAttribute="bottom" secondItem="1Ij-oa-Sw1" secondAttribute="bottom" constant="10" id="9lY-5o-t9I"/>
                                     <constraint firstItem="62y-fc-R5d" firstAttribute="leading" secondItem="SdU-B4-1gJ" secondAttribute="leading" id="BgQ-Lm-4TS"/>
                                     <constraint firstItem="1Ij-oa-Sw1" firstAttribute="top" secondItem="SdU-B4-1gJ" secondAttribute="top" constant="1" id="JCb-Vi-SW9"/>
                                     <constraint firstAttribute="width" secondItem="SdU-B4-1gJ" secondAttribute="height" multiplier="17.5:4" id="KQQ-Ni-gkJ"/>
@@ -81,16 +81,15 @@
                                     <outlet property="imgTrebleClef" destination="62y-fc-R5d" id="ZYH-PO-OsW"/>
                                 </connections>
                             </view>
-                            <tabBar contentMode="scaleToFill" fixedFrame="YES" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="5P4-U7-CZW">
-                                <rect key="frame" x="0.0" y="736" width="375" height="49"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            <tabBar contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="5P4-U7-CZW">
+                                <rect key="frame" x="0.0" y="729" width="375" height="83"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <items>
-                                    <tabBarItem title="Trumpet" id="UlI-zr-m3j"/>
-                                    <tabBarItem title="Trombone" id="ywX-Xn-7R9"/>
-                                    <tabBarItem title="Euphonium" id="lDM-BD-Okz"/>
-                                    <tabBarItem title="Tuba" id="7b4-Be-102"/>
-                                    <tabBarItem title="French Horn" id="2id-Ya-3tx" userLabel="French Horn"/>
+                                    <tabBarItem title="Trumpet" image="TabTrumpet" id="UlI-zr-m3j"/>
+                                    <tabBarItem title="Trombone" image="TabTrombone" id="ywX-Xn-7R9"/>
+                                    <tabBarItem title="Euphonium" image="TabEuphonium" id="lDM-BD-Okz"/>
+                                    <tabBarItem title="Tuba" image="TabTuba" id="7b4-Be-102"/>
+                                    <tabBarItem title="French Horn" image="TabFrenchHorn" id="2id-Ya-3tx" userLabel="French Horn"/>
                                 </items>
                             </tabBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="note" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eKJ-EW-Wiq">
@@ -130,12 +129,15 @@ B♭</string>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="SdU-B4-1gJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="8" id="4f8-mb-Yvt"/>
+                            <constraint firstAttribute="bottom" secondItem="5P4-U7-CZW" secondAttribute="bottom" id="F1L-qO-C2Z"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="72Z-XT-JyC" secondAttribute="bottom" id="GXu-UK-ihe"/>
                             <constraint firstItem="SdU-B4-1gJ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Gjy-xK-Gdh"/>
+                            <constraint firstAttribute="trailing" secondItem="5P4-U7-CZW" secondAttribute="trailing" id="KIK-rX-HH6"/>
                             <constraint firstItem="SdU-B4-1gJ" firstAttribute="centerX" secondItem="72Z-XT-JyC" secondAttribute="centerX" id="M3F-yw-ig9"/>
                             <constraint firstAttribute="trailingMargin" secondItem="SdU-B4-1gJ" secondAttribute="trailing" constant="8" id="ZdJ-wX-2FU"/>
                             <constraint firstItem="SdU-B4-1gJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="c7i-RR-pDa"/>
                             <constraint firstItem="72Z-XT-JyC" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="tl6-60-sBN"/>
+                            <constraint firstItem="5P4-U7-CZW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="y3w-AJ-USx"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="Rd1-gg-f8i" appends="YES" id="TZ3-yq-Sal"/>
@@ -162,6 +164,11 @@ B♭</string>
     </scenes>
     <resources>
         <image name="BassClef" width="387" height="448"/>
+        <image name="TabEuphonium" width="33" height="33"/>
+        <image name="TabFrenchHorn" width="33" height="33"/>
+        <image name="TabTrombone" width="33" height="15"/>
+        <image name="TabTrumpet" width="33" height="33"/>
+        <image name="TabTuba" width="11" height="11"/>
         <image name="TrebleClef" width="316" height="833"/>
     </resources>
 </document>
