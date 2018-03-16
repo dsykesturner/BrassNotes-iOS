@@ -29,7 +29,10 @@ class ViewController: UIViewController, StaveDelegate, UITabBarDelegate {
         super.viewDidAppear(animated)
         
         // Setup the default selection once the auto-constraints have sorted out
-        let defaultItem:UITabBarItem = tabBar.items![1]
+        
+        let lastUsedInstrument = UserDefaults.standard.integer(forKey: "lastUsedInstrument")
+        let defaultItem:UITabBarItem = tabBar.items![lastUsedInstrument]
+        
         populateWithInstrument(instrument: defaultItem.title!)
         tabBar.selectedItem = defaultItem
         
@@ -88,6 +91,10 @@ class ViewController: UIViewController, StaveDelegate, UITabBarDelegate {
     func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         // Populate the stave with the lowercased name of the tab item selected
         self.populateWithInstrument(instrument: item.title!)
+        
+        // Save the last used intrument
+        let lastUsedIndex = tabBar.items?.index(of: item)
+        UserDefaults.standard.set(lastUsedIndex, forKey: "lastUsedInstrument")
     }
 }
 
